@@ -12,6 +12,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/games', [GameController::class, 'index'])->name('games.index');
     Route::get('/game/create', [GameController::class, 'create'])->name('game.create');
